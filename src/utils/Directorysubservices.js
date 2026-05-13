@@ -1,0 +1,121 @@
+export const hospitalFilters = [
+  {
+    id: 1,
+    label: "All Hospitals",
+    slug: "all",
+    isActive: true,
+  },
+  {
+    id: 2,
+    label: "Government",
+    slug: "government",
+    isActive: false,
+  },
+  {
+    id: 3,
+    label: "Private",
+    slug: "private",
+    isActive: false,
+  },
+  {
+    id: 4,
+    label: "Clinics",
+    slug: "clinics",
+    isActive: false,
+  },
+  {
+    id: 5,
+    label: "Dental",
+    slug: "dental",
+    isActive: false,
+  },
+  {
+    id: 6,
+    label: "Diagnostic",
+    slug: "diagnostic",
+    isActive: false,
+  },
+];
+
+export const hospitalsData = [
+  {
+    id: 1,
+    name: "SK Hospital Sikar",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBNE9zbRuYGFLgvwNCE7Kld-RxtLauWMwihNgkOa4HFgy8mi_rTYO8twxaLFs9knu9HopxoeXjLxy_-mVgQpBqXP46wLdtKcLMoETWUZshEAQreqbIYqwtoMfJhqdb1ND576Ebnrml5EpUl1qfBUwu7PF1jU1FGk_ZSQ-uFhHF8-WP_0f3qGuJUZPmK-FK2ARaq7HgKhBpbw1wJX7oZkt-eSe81T8aUbTfDfoyM_FxVZjkyr9ksgSXZThS1cTq1DF_WoaiC6uB2B-g",
+    tag: "Verified",
+    tagClass: "bg-secondary-container text-on-secondary-container",
+    rating: 4.5,
+    location: "Kalyan Circle, Sikar, RJ",
+    phone: "+91 1572 250001",
+    timing: "Open 24 Hours",
+    is24Hours: true,
+    type: "government",
+  },
+  {
+    id: 2,
+    name: "Prince Medical Centre",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAvITwA0wCUOz8W04qas4hMuyCd4EdmQDRxAwzBcDhcWyg9jK_bgWQhkuBb8Du8KsZPLbP_j6EMHBAiVjvTgGCcegRX0scUxaDHnywomiyHecc1fhFm8MwaZjKRXYgKxnMJWnHmkMfklgiKuaGRHnGVem_zcWoPJWPVqUG45n8h-cQ9yh7WFQXJEC2C08OSB83Ho64_9LaRhSEZtG6WDXXB0nxOeZUFULeJ1oY9cm2XdrGIgxqRqysW5YMDNM1Om7Ku8HrSIQOE_iM",
+    tag: "Private",
+    tagClass: "bg-primary-container text-on-primary-container",
+    rating: 4.8,
+    location: "Piparali Road, Sikar, RJ",
+    phone: "+91 1572 255400",
+    timing: "09:00 AM - 08:00 PM",
+    is24Hours: false,
+    type: "private",
+  },
+  {
+    id: 3,
+    name: "Sikar Multi-Speciality",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBpl3jL0nNU8m6h_quVGvppZGAZdCdQTSDS7Kyhx3xUsi91_-kTaY2KgJbeD6pLYdfRxjvlr-fLztmoMUZNg52035lsI4JoB7FkJS4R9LvDq26kD0_UhLm6hxHurrQ9ksBVufxukgsDvucHWt80WsBIkUUVBTNjjgd_TBfm5CeyyoA8ZvGrWYIO2tc3mT6CEDk-3yPOss3MWn3yjrmNXD-99FgEPd0XRFnxqYR82pCxs-gTy4NVcu6Uem6dI9MMPhQvlJq0RClNYqU",
+    tag: null,
+    rating: 4.2,
+    location: "Nawalgarh Road, Sikar, RJ",
+    phone: "+91 1572 244111",
+    timing: "Open 24 Hours",
+    is24Hours: true,
+    type: "private",
+  },
+  {
+    id: 4,
+    name: "Kalyan Diagnostics",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCM7-OmfGcyp4bpRMIf2GRa3G6MKPO5CHvd9H0xHHZ-5zaGvvp_jkF1aBm-mU1i6LqS6eBf6qInZr6Ij8N1wsX3Vxio7LriiOzetkZAJZJHUJAy3uWlfpD2ai_dF_eA7im3QYY85qN7RjUJDat7EXwRNd_JANyES7e5hSjR2o3my0sU1oxs86Y117ufXaqEtMPCgI7pnOAl_pHRR-BBK15BCdKB26ZL24RZI1K-lAl2lezMrHHcIE5sU_TyDR_hBZP78x0WxmvXED8",
+    tag: null,
+    rating: 4.9,
+    location: "Fatehpur Road, Sikar, RJ",
+    phone: "+91 1572 260022",
+    timing: "08:00 AM - 09:00 PM",
+    is24Hours: false,
+    type: "diagnostic",
+  },
+  {
+    id: 5,
+    name: "Global Heart Institute",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBSb7Gk9FiLYIpGUwywdwah3FgsB-K4mYgMgwxntF5v4WZr53IPmmFBdZt-q1hykFKNth-_eQbr84QAdvCJnopDXBWMmjxBaR5R7-1H-1I92w8dCbjLPCjJ5rT4V7UhILi3FY_hTz585ktCKg7m9NClRs-qCDuws-kFABmuMEiTwROJZGNPiXSG5sBkgvoGqjN60APgyiiQXBUgT5ZB3_-45dDw1Gs599apxef_OcFrZGkv7aOgTODcmYF2iwb9IHuR1vbz02IVM3A",
+    tag: null,
+    rating: 4.6,
+    location: "Jaipur Road, Sikar, RJ",
+    phone: "+91 1572 233344",
+    timing: "Open 24 Hours",
+    is24Hours: true,
+    type: "private",
+  },
+  {
+    id: 6,
+    name: "Heritage City Clinic",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCfXkTUezTjm_UEwDdksS8mVqoP9YCEW0WHP1u-SQt7ynHx7AtAbRhsffKvltDYH6N4p0LTU7lYMnQCWCzr0C7k0egV3ae3KS9Ryl_PRV4qJi7o6ZhcvUfu4-L0BzPB3s6eaXbETCr4wJ3eg8m-yRpNpzo2XNOcBtVD0hJHnTaa_-qMZ23-Saq5wxSPpxQiKR8AkPHah2cNDeGNKeWHRwSehln6k9P5QpZeh1Hc2AHHjoooXl672BM-OJ2WpWxPNugGSR-BLHn3C6c",
+    tag: null,
+    rating: 4.4,
+    location: "Court Road, Sikar, RJ",
+    phone: "+91 1572 221199",
+    timing: "10:00 AM - 07:00 PM",
+    is24Hours: false,
+    type: "clinics",
+  },
+];
