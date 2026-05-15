@@ -1,7 +1,11 @@
 import React from "react";
-
+import Routingpages from "./routes/Routingpages";
 function App() {
-  return <div>hii</div>;
+  return (
+    <>
+      <Routingpages />
+    </>
+  );
 }
 
 export default App;
