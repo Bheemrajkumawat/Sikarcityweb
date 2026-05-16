@@ -1,4 +1,3 @@
-import React from "react";
 import Typewriter from "typewriter-effect";
 import heroimage from "../assets/herosectionimage/hero.png";
 function Herosection() {

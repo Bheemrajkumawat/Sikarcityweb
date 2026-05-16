@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -6,7 +5,7 @@ function Footer() {
     <>
       {/* <!-- Footer --> */}
       <footer className="bg-surface-container-lowest border-t border-outline-variant">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto">
           <div>
             <Link to="/">
               <span className="font-headline-md text-headline-md font-bold text-primary mb-stack-md block cursor-pointer">
@@ -107,10 +106,9 @@ function Footer() {
             </p>
           </div>
         </div>
-        <div className="border-t border-outline-variant py-stack-md px-margin-desktop text-center">
+        <div className="border-t border-outline-variant py-stack-md px-margin-mobile md:px-margin-desktop text-center">
           <p className="text-on-surface-variant font-label-md">
-            © 2024 Sikar City Directory. Heritage &amp; Progress. All rights
-            reserved.
+            © {new Date().getFullYear()} Sikar City Directory. Heritage &amp; Progress. All rights reserved.
           </p>
         </div>
       </footer>
