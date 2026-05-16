@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -17,7 +17,17 @@ import {
 function Directorysubservices() {
   const { id } = useParams();
   const [activeFilter, setActiveFilter] = useState("all");
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Debounce search term: update searchQuery only after 500ms of no typing
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchQuery(searchTerm);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
 
   const handleLocation = (location) => {
     const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
@@ -26,16 +36,76 @@ function Directorysubservices() {
 
   // Map the URL parameter to the corresponding data and title
   const categoryConfig = {
-    "hospitals": { title: "Hospitals", data: hospitalsData, filters: hospitalFilters },
-    "restaurants": { title: "Restaurants", data: restaurantsData, filters: restaurantFilters },
-    "cafes": { title: "Cafes", data: cafesData, filters: cafeFilters },
-    "schools": { title: "Schools", data: schoolsData, filters: schoolFilters },
-    "hotels": { title: "Hotels", data: hotelsData, filters: hotelFilters },
-    "shops": { title: "Shops", data: shopsData, filters: shopFilters },
-    "parks": { title: "Parks", data: parkData, filters: parkFilters },
-    "gyms": { title: "Gyms", data: gymsData, filters: gymFilters },
-    "banks": { title: "Banks", data: banksData, filters: bankFilters },
-    "tourist-places": { title: "Tourist Places", data: touristPlacesData, filters: touristFilters },
+    "hospitals": {
+      title: "Hospitals",
+      data: hospitalsData,
+      filters: hospitalFilters,
+      description: "Comprehensive medical facilities and healthcare providers in Sikar.",
+      placeholder: "Search hospitals or specialists..."
+    },
+    "restaurants": {
+      title: "Restaurants",
+      data: restaurantsData,
+      filters: restaurantFilters,
+      description: "Discover the finest dining experiences and local flavors of Sikar.",
+      placeholder: "Search by cuisine or restaurant..."
+    },
+    "cafes": {
+      title: "Cafes",
+      data: cafesData,
+      filters: cafeFilters,
+      description: "Cozy spots for coffee, snacks, and hangouts in the heart of the city.",
+      placeholder: "Search for cafes or beverages..."
+    },
+    "schools": {
+      title: "Schools",
+      data: schoolsData,
+      filters: schoolFilters,
+      description: "Leading educational institutions and schools for a brighter future in Sikar.",
+      placeholder: "Search for schools or colleges..."
+    },
+    "hotels": {
+      title: "Hotels",
+      data: hotelsData,
+      filters: hotelFilters,
+      description: "Premium stays and comfortable accommodations for your visit to Sikar.",
+      placeholder: "Search by hotel name or location..."
+    },
+    "shops": {
+      title: "Shops",
+      data: shopsData,
+      filters: shopFilters,
+      description: "Explore local markets and premium retail outlets across Sikar.",
+      placeholder: "Search for shops or products..."
+    },
+    "parks": {
+      title: "Parks",
+      data: parkData,
+      filters: parkFilters,
+      description: "Green spaces and recreational areas for relaxation and outdoor activities.",
+      placeholder: "Search for parks or gardens..."
+    },
+    "gyms": {
+      title: "Gyms",
+      data: gymsData,
+      filters: gymFilters,
+      description: "Stay fit with the best fitness centers and gyms in Sikar.",
+      placeholder: "Search for gyms or fitness trainers..."
+    },
+    "banks": {
+      title: "Banks",
+      data: banksData,
+      filters: bankFilters,
+      description: "Secure banking and financial services available across the city.",
+      placeholder: "Search for banks or ATMs..."
+    },
+    "tourist-places": {
+      title: "Tourist Places",
+      data: touristPlacesData,
+      filters: touristFilters,
+      description: "Historical landmarks and heritage sites reflecting the soul of Shekhawati.",
+      placeholder: "Search for heritage sites or landmarks..."
+    },
   };
 
   const currentCategory = categoryConfig[id] || categoryConfig["hospitals"];
@@ -65,18 +135,17 @@ function Directorysubservices() {
                     {displayTitle}
                   </h1>
                   <p className="text-on-surface-variant font-body-md">
-                    Comprehensive medical facilities and healthcare providers in
-                    Sikar.
+                    {currentCategory.description}
                   </p>
                 </div>
                 <div className="flex-1 max-w-lg">
                   <div className="relative group">
                     <input
-                      className="w-full h-14 px-stack-md pr-12 bg-white border border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-200 shadow-sm"
-                      placeholder="Search hospitals or specialists..."
+                      className="w-full h-12 px-stack-md pr-12 bg-white border border-outline-variant rounded-md focus:border-primary focus:ring-0.5 focus:ring-primary outline-none transition-all duration-200 shadow-sm"
+                      placeholder={currentCategory.placeholder}
                       type="text"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
                     />
                     <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary">
                       search
