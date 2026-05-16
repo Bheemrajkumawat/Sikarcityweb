@@ -367,7 +367,7 @@ export const schoolsData = [
     id: 3,
     name: "Government Senior Secondary School",
     image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80",
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80",
     tag: null,
     rating: 4.1,
     location: "Nawalgarh Road, Sikar, RJ",
