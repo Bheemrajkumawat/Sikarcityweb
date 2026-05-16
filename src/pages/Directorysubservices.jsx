@@ -1,19 +1,50 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { hospitalFilters, hospitalsData } from "../utils/Directorysubservices";
+import { 
+  hospitalFilters, hospitalsData, 
+  restaurantFilters, restaurantsData, 
+  cafeFilters, cafesData, 
+  schoolFilters, schoolsData, 
+  hotelFilters, hotelsData, 
+  shopFilters, shopsData, 
+  parkFilters, parkData, 
+  gymFilters, gymsData, 
+  bankFilters, banksData, 
+  touristFilters, touristPlacesData 
+} from "../utils/Directorysubservices";
 
 function Directorysubservices() {
+  const { id } = useParams();
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // 1. Logic to filter data based on both Category AND Search Query
-  const filteredHospitals = hospitalsData.filter((hospital) => {
+  // Map the URL parameter to the corresponding data and title
+  const categoryConfig = {
+    "hospitals": { title: "Hospitals", data: hospitalsData, filters: hospitalFilters },
+    "restaurants": { title: "Restaurants", data: restaurantsData, filters: restaurantFilters },
+    "cafes": { title: "Cafes", data: cafesData, filters: cafeFilters },
+    "schools": { title: "Schools", data: schoolsData, filters: schoolFilters },
+    "hotels": { title: "Hotels", data: hotelsData, filters: hotelFilters },
+    "shops": { title: "Shops", data: shopsData, filters: shopFilters },
+    "parks": { title: "Parks", data: parkData, filters: parkFilters },
+    "gyms": { title: "Gyms", data: gymsData, filters: gymFilters },
+    "banks": { title: "Banks", data: banksData, filters: bankFilters },
+    "tourist-places": { title: "Tourist Places", data: touristPlacesData, filters: touristFilters },
+  };
+
+  const currentCategory = categoryConfig[id] || categoryConfig["hospitals"];
+  const displayData = currentCategory.data;
+  const displayTitle = currentCategory.title;
+  const currentFilters = currentCategory.filters;
+
+  // Logic to filter data based on both Category AND Search Query
+  const filteredItems = displayData.filter((item) => {
     const matchesCategory =
-      activeFilter === "all" || hospital.type === activeFilter;
+      activeFilter === "all" || item.type === activeFilter;
     const matchesSearch =
-      hospital.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      hospital.location.toLowerCase().includes(searchQuery.toLowerCase());
+      item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.location.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
   return (
@@ -26,7 +57,7 @@ function Directorysubservices() {
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
                 <div>
                   <h1 className="font-headline-lg text-headline-lg text-primary-container mb-unit">
-                    Hospitals
+                    {displayTitle}
                   </h1>
                   <p className="text-on-surface-variant font-body-md">
                     Comprehensive medical facilities and healthcare providers in
@@ -51,7 +82,7 @@ function Directorysubservices() {
             </div>
             <div className="flex flex-wrap gap-stack-sm mb-stack-lg">
               <AnimatePresence mode="popLayout">
-                {hospitalFilters.map((filter) => (
+                {currentFilters && currentFilters.map((filter) => (
                   <motion.button
                     key={filter.id}
                     layout
@@ -76,9 +107,9 @@ function Directorysubservices() {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter"
             >
               <AnimatePresence mode="popLayout">
-                {filteredHospitals.map((hospital) => (
+                {filteredItems.map((item) => (
                   <motion.div
-                    key={hospital.id}
+                    key={item.id}
                     layout
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -89,22 +120,22 @@ function Directorysubservices() {
                     <div className="relative h-48">
                       <img
                         className="w-full h-full object-cover"
-                        data-alt="A clean, modern professional hospital lobby with large windows, bright clinical lighting, and contemporary reception desks. The atmosphere is calm and sterile, using a palette of white and royal blue, reflecting a high-end medical facility in Sikar. Soft natural light illuminates the polished floors and architectural details."
-                        src={hospital.image}
-                        alt={hospital.name}
+                        data-alt={item.name}
+                        src={item.image}
+                        alt={item.name}
                       />
-                      {hospital.tag && (
+                      {item.tag && (
                         <span
-                          className={`absolute top-4 right-4 px-3 py-1 rounded-full font-label-md text-xs ${hospital.tagClass || "bg-secondary-container text-on-secondary-container"}`}
+                          className={`absolute top-4 right-4 px-3 py-1 rounded-full font-label-md text-xs ${item.tagClass || "bg-secondary-container text-on-secondary-container"}`}
                         >
-                          {hospital.tag}
+                          {item.tag}
                         </span>
                       )}
                     </div>
                     <div className="p-stack-md">
                       <div className="flex justify-between items-start mb-unit">
                         <h3 className="font-headline-md text-primary-container">
-                          {hospital.name}
+                          {item.name}
                         </h3>
                         <div className="flex items-center gap-1 text-secondary">
                           <span
@@ -115,7 +146,7 @@ function Directorysubservices() {
                           </span>
                           <span className="font-label-md">
                             {" "}
-                            {hospital.rating}
+                            {item.rating}
                           </span>
                         </div>
                       </div>
@@ -123,14 +154,14 @@ function Directorysubservices() {
                         <span className="material-symbols-outlined text-base">
                           location_on
                         </span>
-                        {hospital.location}
+                        {item.location}
                       </p>
                       <div className="space-y-unit mb-stack-md">
                         <div className="flex items-center gap-2 text-sm text-on-surface-variant">
                           <span className="material-symbols-outlined text-base text-primary">
                             call
                           </span>
-                          <span>{hospital.phone}</span>
+                          <span>{item.phone}</span>
                         </div>
                         <div className="flex items-center gap-2 text-sm text-on-surface-variant">
                           <span className="material-symbols-outlined text-base text-primary">
@@ -138,12 +169,12 @@ function Directorysubservices() {
                           </span>
                           <span
                             className={
-                              hospital.is24Hours
+                              item.is24Hours
                                 ? "text-secondary font-semibold"
                                 : ""
                             }
                           >
-                            {hospital.timing}
+                            {item.timing}
                           </span>
                         </div>
                       </div>
@@ -151,7 +182,7 @@ function Directorysubservices() {
                         <button className="flex-1 bg-surface-container-low text-primary font-label-md py-2 rounded-lg hover:bg-surface-container transition-colors">
                           Location
                         </button>
-                        <Link to={`/details/${hospital.id}`} className="flex-1">
+                        <Link to={`/details/${item.id}`} className="flex-1">
                           <button
                             type="button"
                             className="w-full bg-primary text-on-primary font-label-md py-2 rounded-lg hover:opacity-90 transition-all"
@@ -166,10 +197,10 @@ function Directorysubservices() {
               </AnimatePresence>
             </motion.div>
             {/* Empty State */}
-            {filteredHospitals.length === 0 && (
+            {filteredItems.length === 0 && (
               <div className="text-center py-stack-lg">
                 <p className="text-on-surface-variant">
-                  No hospitals found matching your criteria.
+                  No items found matching your criteria.
                 </p>
               </div>
             )}

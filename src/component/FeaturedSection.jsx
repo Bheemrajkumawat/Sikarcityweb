@@ -1,9 +1,8 @@
-import React from "react";
 function FeaturedSection() {
   return (
     <>
       {/* <!-- Featured Section --> */}
-      <section className="py-stack-lg bg-surface-container-low jali-pattern">
+      <section className="py-stack-lg">
         <div className="px-margin-desktop max-w-container-max mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
             <div>

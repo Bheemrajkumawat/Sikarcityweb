@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { facilities } from "../utils/facilities";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function ServiceCategories() {
+  const navigate = useNavigate();
+  const handleNavigate = (item) => {
+    navigate(`/${item.title.toLowerCase().replace(/\s+/g, '-')}`);
+  };
   const [showAll, setShowAll] = useState(false);
   // The number of items to display by default before expanding
   const initialLimit = 10;
@@ -48,6 +53,7 @@ function ServiceCategories() {
           <AnimatePresence mode="popLayout">
             {visibleCategories?.map((item) => (
               <motion.div
+                onClick={() => handleNavigate(item)}
                 key={item.id}
                 layout
                 initial={{ opacity: 0, y: 20 }}

@@ -15,6 +15,7 @@ function Routingpages() {
           <Route path="/" element={<Home />} />
           <Route path="/directory" element={<Directorysubservices />} />
           <Route path="/servicedetails" element={<Servicedetails />} />
+          <Route path="/:id" element={<Directorysubservices />} />
         </Routes>
         <Footer />
       </div>
