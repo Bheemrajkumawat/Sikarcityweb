@@ -1,23 +1,28 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  hospitalFilters, hospitalsData, 
-  restaurantFilters, restaurantsData, 
-  cafeFilters, cafesData, 
-  schoolFilters, schoolsData, 
-  hotelFilters, hotelsData, 
-  shopFilters, shopsData, 
-  parkFilters, parkData, 
-  gymFilters, gymsData, 
-  bankFilters, banksData, 
-  touristFilters, touristPlacesData 
+import {
+  hospitalFilters, hospitalsData,
+  restaurantFilters, restaurantsData,
+  cafeFilters, cafesData,
+  schoolFilters, schoolsData,
+  hotelFilters, hotelsData,
+  shopFilters, shopsData,
+  parkFilters, parkData,
+  gymFilters, gymsData,
+  bankFilters, banksData,
+  touristFilters, touristPlacesData
 } from "../utils/Directorysubservices";
 
 function Directorysubservices() {
   const { id } = useParams();
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+
+  const handleLocation = (location) => {
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+    window.open(url, "_blank");
+  };
 
   // Map the URL parameter to the corresponding data and title
   const categoryConfig = {
@@ -91,11 +96,10 @@ function Directorysubservices() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setActiveFilter(filter.slug)}
-                    className={`px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm ${
-                      activeFilter === filter.slug
-                        ? "bg-primary-container text-on-primary-container ring-2 ring-primary/20"
-                        : "bg-white border border-outline-variant text-on-surface-variant hover:bg-surface-container"
-                    }`}
+                    className={`px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm ${activeFilter === filter.slug
+                      ? "bg-primary-container text-on-primary-container ring-2 ring-primary/20"
+                      : "bg-white border border-outline-variant text-on-surface-variant hover:bg-surface-container"
+                      }`}
                   >
                     {filter.label}
                   </motion.button>
@@ -179,13 +183,16 @@ function Directorysubservices() {
                         </div>
                       </div>
                       <div className="flex gap-2 pt-unit border-t border-outline-variant">
-                        <button className="flex-1 bg-surface-container-low text-primary font-label-md py-2 rounded-lg hover:bg-surface-container transition-colors">
+                        <button
+                          onClick={() => handleLocation(item.location)}
+                          className="flex-1 bg-surface-container-low text-primary font-label-md py-2 rounded-lg hover:bg-surface-container transition-colors cursor-pointer"
+                        >
                           Location
                         </button>
-                        <Link to={`/details/${item.id}`} className="flex-1">
+                        <Link to={`/details/${id || "hospitals"}/${item.id}`} className="flex-1">
                           <button
                             type="button"
-                            className="w-full bg-primary text-on-primary font-label-md py-2 rounded-lg hover:opacity-90 transition-all"
+                            className="w-full bg-primary text-on-primary font-label-md py-2 rounded-lg hover:opacity-90 transition-all cursor-pointer"
                           >
                             View Details
                           </button>
