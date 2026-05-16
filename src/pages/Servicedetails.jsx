@@ -54,7 +54,7 @@ function Servicedetails() {
               src={item.image}
               alt={item.name}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-stack-md">
+            <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end p-stack-md">
               <span className="text-white font-label-md bg-secondary px-3 py-1 rounded-full">
                 Main View
               </span>
@@ -134,7 +134,7 @@ function Servicedetails() {
               <div className="space-y-4">
                 <h2 className="font-headline-md text-headline-md text-on-background flex items-center gap-2">
                   Overview
-                  <div className="h-[1px] flex-grow bg-outline-variant ml-2"></div>
+                  <div className="h-px grow bg-outline-variant ml-2"></div>
                 </h2>
                 <p className="text-on-surface-variant text-body-md leading-relaxed">
                   {item.name} is one of the most trusted names in Sikar for {category.replace("-", " ")}.
