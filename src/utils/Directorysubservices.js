@@ -843,7 +843,7 @@ export const touristPlacesData = [
     id: 1,
     name: "Rani Sati Temple",
     image:
-      "https://images.unsplash.com/photo-1609947017136-9daf32a2aa8e?w=600&q=80",
+      "https://temple.yatradham.org/public/Product/temple/temple_Cb60WymZ_202506301531240.jpg",
     tag: "Famous",
     tagClass: "bg-secondary-container text-on-secondary-container",
     rating: 4.9,
@@ -856,8 +856,7 @@ export const touristPlacesData = [
   {
     id: 2,
     name: "Harshnath Temple",
-    image:
-      "https://images.unsplash.com/photo-1570458436416-b8fcccfe883f?w=600&q=80",
+    image: "https://pbs.twimg.com/media/Fa5lIFgXgAA9jSI.jpg",
     tag: "Heritage",
     tagClass: "bg-primary-container text-on-primary-container",
     rating: 4.7,
@@ -871,7 +870,7 @@ export const touristPlacesData = [
     id: 3,
     name: "Jeenmata Temple",
     image:
-      "https://images.unsplash.com/photo-1592549585866-486f41778d24?w=600&q=80",
+      "https://images.bhaskarassets.com/web2images/521/2022/09/26/orig_untitled4_1664137205.jpg",
     tag: null,
     rating: 4.8,
     location: "Reengus, Sikar, RJ",
@@ -884,7 +883,7 @@ export const touristPlacesData = [
     id: 4,
     name: "Fatehpur Shekhawati Havelis",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHcjYTHqkvzkIfQdHAYUxvEFyWekVt4esLUw&s",
     tag: null,
     rating: 4.6,
     location: "Fatehpur, Sikar, RJ",
@@ -897,7 +896,7 @@ export const touristPlacesData = [
     id: 5,
     name: "Laxmangarh Fort",
     image:
-      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXI2BsV7KPlFGTHRfBuCFWaWWq-sbrWoRtyQ&s",
     tag: null,
     rating: 4.5,
     location: "Laxmangarh, Sikar, RJ",
@@ -910,7 +909,7 @@ export const touristPlacesData = [
     id: 6,
     name: "Devyani Kund",
     image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDIMp5NNmNV8SRhV5R_cb2H8E7Okznzxb5w&s",
     tag: null,
     rating: 4.3,
     location: "Nawalgarh Road, Sikar, RJ",
