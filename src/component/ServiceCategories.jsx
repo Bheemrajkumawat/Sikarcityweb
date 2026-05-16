@@ -47,6 +47,16 @@ function ServiceCategories() {
         </div>
         <motion.div
           layout
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.05
+              }
+            }
+          }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-gutter"
         >
           <AnimatePresence mode="popLayout">
@@ -55,8 +65,10 @@ function ServiceCategories() {
                 onClick={() => handleNavigate(item)}
                 key={item.id}
                 layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0 }
+                }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="group bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,35,102,0.08)] hover:-translate-y-1 hover:shadow-[0px_12px_32px_rgba(0,35,102,0.12)] transition-all duration-300 cursor-pointer"

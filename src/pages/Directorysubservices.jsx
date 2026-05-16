@@ -108,17 +108,30 @@ function Directorysubservices() {
             </div>
             <motion.div
               layout
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1
+                  }
+                }
+              }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter"
             >
               <AnimatePresence mode="popLayout">
-                {filteredItems.map((item) => (
+                {filteredItems.map((item, index) => (
                   <motion.div
                     key={item.id}
                     layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 }
+                    }}
+                    initial="hidden"
+                    animate="visible"
                     exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
                     className="group bg-white rounded-xl shadow-[0px_4px_20px_rgba(0,35,102,0.08)] hover:shadow-[0px_12px_32px_rgba(0,35,102,0.12)] hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                   >
                     <div className="relative h-48">
