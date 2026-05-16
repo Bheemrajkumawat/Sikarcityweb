@@ -127,6 +127,7 @@ function Directorysubservices() {
                         data-alt={item.name}
                         src={item.image}
                         alt={item.name}
+                        loading="lazy"
                       />
                       {item.tag && (
                         <span

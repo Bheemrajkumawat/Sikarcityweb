@@ -53,6 +53,7 @@ function Servicedetails() {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               src={item.image}
               alt={item.name}
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end p-stack-md">
               <span className="text-white font-label-md bg-secondary px-3 py-1 rounded-full">
@@ -66,6 +67,7 @@ function Servicedetails() {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               src={item.image}
               alt={item.name}
+              loading="lazy"
             />
           </div>
           <div className="md:col-span-1 md:row-span-1 relative group overflow-hidden">
@@ -73,6 +75,7 @@ function Servicedetails() {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               src={item.image}
               alt={item.name}
+              loading="lazy"
             />
           </div>
           <div className="md:col-span-2 md:row-span-1 relative group overflow-hidden">
@@ -80,6 +83,7 @@ function Servicedetails() {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               src={item.image}
               alt={item.name}
+              loading="lazy"
             />
           </div>
         </section>
