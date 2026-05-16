@@ -50,7 +50,7 @@ function Servicedetails() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <main className="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+      <main className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-mobile md:py-stack-lg">
         {/* <!-- Image Gallery Bento Grid --> */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ function Servicedetails() {
           >
             <div className="bg-surface-container-lowest p-stack-md rounded-xl shadow-sm border border-outline-variant">
               <div className="flex flex-wrap items-center justify-between gap-stack-sm mb-4">
-                <h1 className="font-headline-lg text-headline-lg text-primary">
+                <h1 className="font-headline-lg text-headline-md md:text-headline-lg text-primary">
                   {item.name}
                 </h1>
                 <div className="flex gap-2">
@@ -130,7 +130,7 @@ function Servicedetails() {
                   )}
                 </div>
               </div>
-              <div className="flex items-center gap-2 mb-6">
+              <div className="flex flex-col md:flex-row items-center gap-2 mb-6">
                 <div className="flex text-secondary-container">
                   {[...Array(5)].map((_, i) => (
                     <span

@@ -20,10 +20,10 @@ function ServiceCategories() {
   return (
     <>
       {/* <!-- Category Bento Grid --> */}
-      <section className="py-stack-lg px-margin-desktop max-w-container-max mx-auto">
+      <section className="md:py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="mb-stack-lg flex justify-between items-end">
           <div>
-            <h2 className="font-headline-lg text-headline-lg text-primary">
+            <h2 className="font-headline-lg text-headline-md md:text-headline-lg text-primary">
               Browse Categories
             </h2>
             <p className="text-on-surface-variant font-body-md">

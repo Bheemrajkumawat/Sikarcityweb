@@ -57,11 +57,11 @@ function Directorysubservices() {
       <div className="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
         <main className="relative min-h-screen">
           <div className="absolute inset-0 jali-pattern pointer-events-none"></div>
-          <section className="relative pt-stack-lg pb-stack-md px-margin-desktop max-w-container-max mx-auto">
+          <section className="relative pt-stack-md md:pt-stack-lg pb-stack-md px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
             <div className="mb-stack-lg">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
                 <div>
-                  <h1 className="font-headline-lg text-headline-lg text-primary-container mb-unit">
+                  <h1 className="font-headline-lg text-headline-md md:text-headline-lg text-primary-container mb-unit">
                     {displayTitle}
                   </h1>
                   <p className="text-on-surface-variant font-body-md">
@@ -226,7 +226,7 @@ function Directorysubservices() {
               </div>
             )}
           </section>
-          <section className="max-w-container-max mx-auto px-margin-desktop py-stack-lg flex items-center justify-center">
+          <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop md:py-stack-lg flex items-center justify-center">
             <div className="h-px  flex-1 bg-outline-variant"></div>
             <div className="px-stack-lg">
               {/* <div className="w-16 h-16 border-t-2 border-l-2 border-primary rotate-45 flex items-center justify-center -translate-y-4">

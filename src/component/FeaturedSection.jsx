@@ -3,10 +3,10 @@ function FeaturedSection() {
     <>
       {/* <!-- Featured Section --> */}
       <section className="py-stack-lg">
-        <div className="px-margin-desktop max-w-container-max mx-auto">
+        <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
             <div>
-              <h2 className="font-headline-lg text-headline-lg text-primary mb-stack-md">
+              <h2 className="font-headline-lg text-headline-md md:text-headline-lg text-primary mb-stack-md">
                 Trusted by Sikar's Community
               </h2>
               <div className="space-y-stack-md">
