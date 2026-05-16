@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { facilities } from "../utils/facilities";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -37,9 +37,8 @@ function ServiceCategories() {
             >
               {showAll ? "Show Less" : "View All Categories"}
               <span
-                className={`material-symbols-outlined text-[18px] transition-transform duration-300 ${
-                  showAll ? "rotate-180" : ""
-                }`}
+                className={`material-symbols-outlined text-[18px] transition-transform duration-300 ${showAll ? "rotate-180" : ""
+                  }`}
               >
                 expand_more
               </span>

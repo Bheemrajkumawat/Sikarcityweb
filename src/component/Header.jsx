@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { navigationData } from "../utils/headerdata";
 function Header() {
