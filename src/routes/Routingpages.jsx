@@ -2,6 +2,8 @@ import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import Loader from "../component/Loader";
+import { useLoading } from "../context/LoadingContext";
 
 // Lazy loading pages
 const Home = lazy(() => import("../pages/Home"));
@@ -9,16 +11,14 @@ const Directorysubservices = lazy(() => import("../pages/Directorysubservices"))
 const Servicedetails = lazy(() => import("../pages/Servicedetails"));
 
 function Routingpages() {
+  const { isLoading } = useLoading();
+
   return (
-    <div className="bg-surface text-on-surface font-body-md">
+    <div className="bg-surface text-on-surface font-body-md overflow-x-hidden">
+      {isLoading && <Loader />}
       <Header />
       <Suspense fallback={
-        <div className="min-h-screen flex items-center justify-center bg-surface">
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-            <p className="text-on-surface-variant font-label-md animate-pulse">SikarCity: Discovering the heart of Shekhawati...</p>
-          </div>
-        </div>
+        <Loader />
       }>
         <Routes>
           <Route path="/" element={<Home />} />

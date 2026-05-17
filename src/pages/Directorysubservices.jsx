@@ -14,7 +14,10 @@ import {
   touristFilters, touristPlacesData
 } from "../utils/Directorysubservices";
 
+import { useLoading } from "../context/LoadingContext";
+
 function Directorysubservices() {
+  const { triggerLoading } = useLoading();
   const { id } = useParams();
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
@@ -272,7 +275,11 @@ function Directorysubservices() {
                         >
                           Location
                         </button>
-                        <Link to={`/details/${id || "hospitals"}/${item.id}`} className="flex-1">
+                        <Link 
+                          to={`/details/${id || "hospitals"}/${item.id}`} 
+                          className="flex-1"
+                          onClick={triggerLoading}
+                        >
                           <button
                             type="button"
                             className="w-full bg-primary text-on-primary font-label-md py-2 rounded-lg hover:opacity-90 transition-all cursor-pointer"

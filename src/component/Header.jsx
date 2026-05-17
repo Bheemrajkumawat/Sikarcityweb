@@ -3,9 +3,11 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { navigationData, directoryCategories } from "../utils/headerdata";
 import { motion, AnimatePresence } from "framer-motion";
 import MobileDrawer from "./MobileDrawer";
+import { useLoading } from "../context/LoadingContext";
 
 
 const Header = () => {
+  const { triggerLoading } = useLoading();
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileDirOpen, setIsMobileDirOpen] = useState(false);
@@ -20,7 +22,7 @@ const Header = () => {
       <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-2 md:py-0 md:max-w-container-max md:mx-auto">
         {/* Logo */}
         <div className="flex items-center gap-stack-md">
-          <Link to="/" className="group flex items-center gap-2">
+          <Link to="/" className="group flex items-center gap-2" onClick={triggerLoading}>
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
               <span className="material-symbols-outlined text-white text-[20px]">domain</span>
             </div>
@@ -51,6 +53,9 @@ const Header = () => {
               <NavLink
                 to={item.path || "#"}
                 end={item.path === "/"}
+                onClick={() => {
+                  if (item.path !== "#") triggerLoading();
+                }}
                 className={({ isActive }) => {
                   const isActuallyActive =
                     item.name === "Directory" ? isHovered || isDirectoryPage : isActive;
@@ -89,7 +94,10 @@ const Header = () => {
                             key={category.id}
                             to={category.path}
                             className="flex items-center gap-3 p-2 rounded-xl hover:bg-white/50 transition-all group border border-transparent hover:border-outline-variant/30 hover:shadow-sm"
-                            onClick={() => setIsHovered(false)}
+                            onClick={() => {
+                              setIsHovered(false);
+                              triggerLoading();
+                            }}
                           >
                             <div className={`w-8 h-8 ${category.bg} rounded-lg flex items-center justify-center transition-transform group-hover:scale-110`}>
                               <span className={`material-symbols-outlined ${category.color} text-[18px]`}>{category.icon}</span>

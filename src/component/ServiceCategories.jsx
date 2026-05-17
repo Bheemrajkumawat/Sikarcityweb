@@ -2,21 +2,22 @@ import { useState } from "react";
 import { facilities } from "../utils/facilities";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useLoading } from "../context/LoadingContext";
 
 function ServiceCategories() {
   const navigate = useNavigate();
+  const { triggerLoading } = useLoading();
   const handleNavigate = (item) => {
+    triggerLoading();
     navigate(`/${item.title.toLowerCase().replace(/\s+/g, '-')}`);
   };
   const [showAll, setShowAll] = useState(false);
-  // The number of items to display by default before expanding
   const initialLimit = 10;
-  // If showAll is true, display the full array; otherwise, display only the first 10 items
   const visibleCategories = showAll
     ? facilities
     : facilities.slice(0, initialLimit);
-  // Boolean check to determine if the "View All" button should be rendered
   const hasMoreThanLimit = facilities.length > initialLimit;
+  
   return (
     <>
       {/* <!-- Category Bento Grid --> */}

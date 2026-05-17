@@ -3,10 +3,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { directoryCategories, navigationData } from "../utils/headerdata";
 import { Link, NavLink } from "react-router-dom";
 
+import { useLoading } from "../context/LoadingContext";
+
 const MobileDrawer = ({ isOpen, onClose, isMobileDirOpen, setIsMobileDirOpen, isDirectoryPage }) => {
+  const { triggerLoading } = useLoading();
   const closeMobileMenu = () => {
     onClose();
     setIsMobileDirOpen(false);
+  };
+
+  const handleLinkClick = () => {
+    triggerLoading();
+    closeMobileMenu();
   };
 
   return createPortal(
@@ -33,12 +41,12 @@ const MobileDrawer = ({ isOpen, onClose, isMobileDirOpen, setIsMobileDirOpen, is
           >
             {/* Drawer header */}
             <div className="flex items-center justify-between px-3 py-1.5 border-b border-gray-100">
-              <div className="flex items-center gap-2">
+              <Link to="/" onClick={handleLinkClick} className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
                   <span className="material-symbols-outlined text-white text-[10px]">domain</span>
                 </div>
                 <span className="font-bold text-primary text-[15px] tracking-tight">SikarCity</span>
-              </div>
+              </Link>
               <button
                 onClick={closeMobileMenu}
                 className="text-gray-400 hover:text-primary transition-colors pt-1.5"
@@ -84,7 +92,7 @@ const MobileDrawer = ({ isOpen, onClose, isMobileDirOpen, setIsMobileDirOpen, is
                                 <Link
                                   key={category.id}
                                   to={category.path}
-                                  onClick={closeMobileMenu}
+                                  onClick={handleLinkClick}
                                   className="flex flex-col items-center gap-1.5 p-2 rounded-md border border-gray-100 hover:border-primary/20 hover:bg-primary/5 transition-all group"
                                 >
                                   <div className={`w-9 h-9 ${category.bg} rounded-md flex items-center justify-center transition-transform group-hover:scale-110`}>
@@ -110,7 +118,7 @@ const MobileDrawer = ({ isOpen, onClose, isMobileDirOpen, setIsMobileDirOpen, is
                     key={item.id}
                     to={item.path}
                     end={item.path === "/"}
-                    onClick={closeMobileMenu}
+                    onClick={handleLinkClick}
                     className={({ isActive }) =>
                       `flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-200 font-medium text-[14px] ${isActive
                         ? "bg-primary-container/10 text-primary font-bold"
