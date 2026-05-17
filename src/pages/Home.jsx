@@ -12,7 +12,7 @@ const sectionFadeIn = {
 
 function Home() {
   return (
-    <main className="pt-1 flex flex-col gap-6 overflow-hidden">
+    <main className="flex flex-col gap-6 overflow-hidden">
       <motion.div {...sectionFadeIn} transition={{ duration: 1 }}>
         <Herosection />
       </motion.div>
