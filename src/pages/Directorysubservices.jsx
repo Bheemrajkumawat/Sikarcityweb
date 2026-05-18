@@ -36,10 +36,12 @@ function Directorysubservices() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Debounce search term: update searchQuery only after 500ms of no typing
+  const [isSearching, setIsSearching] = useState(false);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearchQuery(searchTerm);
+      setIsSearching(false);
     }, 500);
 
     return () => clearTimeout(timer);
@@ -185,11 +187,22 @@ function Directorysubservices() {
                       placeholder={currentCategory.placeholder}
                       type="text"
                       value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
+                      onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                        if (e.target.value !== searchQuery) {
+                          setIsSearching(true);
+                        }
+                      }}
                     />
-                    <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary">
-                      search
-                    </span>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center">
+                      {isSearching ? (
+                        <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                      ) : (
+                        <span className="material-symbols-outlined text-primary">
+                          search
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
