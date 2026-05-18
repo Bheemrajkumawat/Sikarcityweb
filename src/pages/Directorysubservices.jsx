@@ -146,7 +146,7 @@ function Directorysubservices() {
   };
 
   const currentCategory = categoryConfig[id];
-  
+
   if (!currentCategory) {
     return <NotFound />;
   }
@@ -207,7 +207,7 @@ function Directorysubservices() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-stack-sm mb-stack-lg">
+            <div className="flex flex-nowrap overflow-x-auto no-scrollbar gap-stack-sm mb-stack-md pb-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
               <AnimatePresence mode="popLayout">
                 {currentFilters &&
                   currentFilters.map((filter) => (
@@ -218,10 +218,17 @@ function Directorysubservices() {
                       animate={{ opacity: 1, scale: 1 }}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => setActiveFilter(filter.slug)}
-                      className={`px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm ${activeFilter === filter.slug
-                          ? "bg-primary-container text-on-primary-container ring-2 ring-primary/20"
-                          : "bg-white border border-outline-variant text-on-surface-variant hover:bg-surface-container"
+                      onClick={(e) => {
+                        setActiveFilter(filter.slug);
+                        e.currentTarget.scrollIntoView({
+                          behavior: "smooth",
+                          block: "nearest",
+                          inline: "center",
+                        });
+                      }}
+                      className={`flex-none px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm ${activeFilter === filter.slug
+                        ? "bg-primary-container text-on-primary-container ring-2 ring-primary/20"
+                        : "bg-white border border-outline-variant text-on-surface-variant hover:bg-surface-container"
                         }`}
                     >
                       {filter.label}
