@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   hospitalFilters,
@@ -24,17 +24,16 @@ import {
   touristPlacesData,
 } from "../utils/Directorysubservices";
 
-import { useLoading } from "../context/LoadingContext";
+
 import { SubServiceSkeleton } from "../component/comancomponent/CardSkeleton";
 import NotFound from "./NotFound";
 
 function Directorysubservices() {
-  const { triggerLoading } = useLoading();
   const { id } = useParams();
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
 
   const [isSearching, setIsSearching] = useState(false);
 
@@ -276,7 +275,7 @@ function Directorysubservices() {
                         />
                         {item.tag && (
                           <span
-                            className={`absolute top-4 right-4 px-3 py-1 rounded-full font-label-md text-xs ${item.tagClass || "bg-secondary-container text-on-secondary-container"}`}
+                            className="absolute top-4 right-4 px-3 py-1 rounded-full font-label-md text-xs bg-primary-container text-on-primary-container"
                           >
                             {item.tag}
                           </span>

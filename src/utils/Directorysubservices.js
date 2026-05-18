@@ -84,7 +84,7 @@ export const hospitalsData = [
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBNE9zbRuYGFLgvwNCE7Kld-RxtLauWMwihNgkOa4HFgy8mi_rTYO8twxaLFs9knu9HopxoeXjLxy_-mVgQpBqXP46wLdtKcLMoETWUZshEAQreqbIYqwtoMfJhqdb1ND576Ebnrml5EpUl1qfBUwu7PF1jU1FGk_ZSQ-uFhHF8-WP_0f3qGuJUZPmK-FK2ARaq7HgKhBpbw1wJX7oZkt-eSe81T8aUbTfDfoyM_FxVZjkyr9ksgSXZThS1cTq1DF_WoaiC6uB2B-g",
     tag: "Verified",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.5,
     location: "Kalyan Circle, Sikar, RJ",
     phone: "+91 1572 250001",
@@ -98,7 +98,7 @@ export const hospitalsData = [
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAvITwA0wCUOz8W04qas4hMuyCd4EdmQDRxAwzBcDhcWyg9jK_bgWQhkuBb8Du8KsZPLbP_j6EMHBAiVjvTgGCcegRX0scUxaDHnywomiyHecc1fhFm8MwaZjKRXYgKxnMJWnHmkMfklgiKuaGRHnGVem_zcWoPJWPVqUG45n8h-cQ9yh7WFQXJEC2C08OSB83Ho64_9LaRhSEZtG6WDXXB0nxOeZUFULeJ1oY9cm2XdrGIgxqRqysW5YMDNM1Om7Ku8HrSIQOE_iM",
     tag: "Private",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.8,
     location: "Piparali Road, Sikar, RJ",
     phone: "+91 1572 255400",
@@ -168,7 +168,7 @@ export const restaurantsData = [
     image:
       "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80",
     tag: "Family",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.5,
     location: "Station Road, Sikar, RJ",
     phone: "+91 9876543210",
@@ -182,7 +182,7 @@ export const restaurantsData = [
     image:
       "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80",
     tag: "Fast Food",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.7,
     location: "Piprali Road, Sikar, RJ",
     phone: "+91 9988776655",
@@ -196,7 +196,7 @@ export const restaurantsData = [
     image:
       "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80",
     tag: "Cafe",
-    tagClass: "bg-tertiary-container text-on-tertiary-container",
+
     rating: 4.3,
     location: "Fatehpur Road, Sikar, RJ",
     phone: "+91 9123456780",
@@ -210,7 +210,7 @@ export const restaurantsData = [
     image:
       "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
     tag: "Traditional",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.8,
     location: "Kalyan Circle, Sikar, RJ",
     phone: "+91 9011223344",
@@ -224,7 +224,7 @@ export const restaurantsData = [
     image:
       "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80",
     tag: "Pizza",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.6,
     location: "Jaipur Road, Sikar, RJ",
     phone: "+91 9090909090",
@@ -238,7 +238,7 @@ export const restaurantsData = [
     image:
       "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80",
     tag: "Veg",
-    tagClass: "bg-tertiary-container text-on-tertiary-container",
+
     rating: 4.4,
     location: "Court Road, Sikar, RJ",
     phone: "+91 9345678901",
@@ -257,7 +257,7 @@ export const cafesData = [
     image:
       "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80",
     tag: "Trending",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.7,
     location: "Subhash Chowk, Sikar, RJ",
     phone: "+91 98291 11234",
@@ -271,7 +271,7 @@ export const cafesData = [
     image:
       "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80",
     tag: "Popular",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.8,
     location: "Piparali Road, Sikar, RJ",
     phone: "+91 98292 22345",
@@ -341,7 +341,7 @@ export const schoolsData = [
     image:
       "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80",
     tag: "Govt. Aided",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.6,
     location: "Fatehpur Road, Sikar, RJ",
     phone: "+91 1572 270101",
@@ -355,7 +355,7 @@ export const schoolsData = [
     image:
       "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80",
     tag: "CBSE",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.8,
     location: "Piparali Road, Sikar, RJ",
     phone: "+91 1572 255500",
@@ -425,7 +425,7 @@ export const hotelsData = [
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",
     tag: "3 Star",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.5,
     location: "Jaipur Road, Sikar, RJ",
     phone: "+91 1572 250100",
@@ -439,7 +439,7 @@ export const hotelsData = [
     image:
       "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80",
     tag: "Premium",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.8,
     location: "Subhash Chowk, Sikar, RJ",
     phone: "+91 1572 255600",
@@ -509,7 +509,7 @@ export const shopsData = [
     image:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80",
     tag: "Wholesale",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.4,
     location: "Purani Mandi, Sikar, RJ",
     phone: "+91 98291 88001",
@@ -523,7 +523,7 @@ export const shopsData = [
     image:
       "https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=600&q=80",
     tag: "Verified",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.6,
     location: "Subhash Chowk, Sikar, RJ",
     phone: "+91 98292 88002",
@@ -593,7 +593,7 @@ export const parkData = [
     image:
       "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80",
     tag: "Public",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.4,
     location: "Fatehpur Road, Sikar, RJ",
     phone: "+91 1572 250200",
@@ -607,7 +607,7 @@ export const parkData = [
     image:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
     tag: "Kids Zone",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.6,
     location: "Kalyan Circle, Sikar, RJ",
     phone: "+91 1572 255700",
@@ -677,7 +677,7 @@ export const gymsData = [
     image:
       "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80",
     tag: "Premium",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.7,
     location: "Subhash Chowk, Sikar, RJ",
     phone: "+91 98291 55001",
@@ -691,7 +691,7 @@ export const gymsData = [
     image:
       "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80",
     tag: "Certified",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.8,
     location: "Piparali Road, Sikar, RJ",
     phone: "+91 98292 55002",
@@ -761,7 +761,7 @@ export const banksData = [
     image:
       "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=600&q=80",
     tag: "Govt. Bank",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.2,
     location: "Kalyan Circle, Sikar, RJ",
     phone: "+91 1572 250300",
@@ -775,7 +775,7 @@ export const banksData = [
     image:
       "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=600&q=80",
     tag: "Private",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.6,
     location: "Piparali Road, Sikar, RJ",
     phone: "+91 1572 255800",
@@ -845,7 +845,7 @@ export const touristPlacesData = [
     image:
       "https://temple.yatradham.org/public/Product/temple/temple_Cb60WymZ_202506301531240.jpg",
     tag: "Famous",
-    tagClass: "bg-secondary-container text-on-secondary-container",
+
     rating: 4.9,
     location: "Jhunjhunu Road, Sikar, RJ",
     phone: "+91 1572 250400",
@@ -858,7 +858,7 @@ export const touristPlacesData = [
     name: "Harshnath Temple",
     image: "https://pbs.twimg.com/media/Fa5lIFgXgAA9jSI.jpg",
     tag: "Heritage",
-    tagClass: "bg-primary-container text-on-primary-container",
+
     rating: 4.7,
     location: "Harshgiri Hills, Sikar, RJ",
     phone: "+91 98291 44001",
