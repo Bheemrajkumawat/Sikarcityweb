@@ -176,7 +176,7 @@ function Servicedetails() {
                 </ul>
               </div>
             </div>
-            
+
             <div className="relative py-stack-md flex justify-center">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-outline-variant"></div>
@@ -232,7 +232,7 @@ function Servicedetails() {
               </div>
               <div
                 className="w-full h-48 rounded-lg overflow-hidden bg-surface-container border border-outline-variant relative cursor-pointer group"
-                onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.location)}`, "_blank")}
+                onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.name + ',' + item.location)}`, "_blank")}
               >
                 <div className="absolute inset-0 jali-pattern opacity-10"></div>
                 <div className="w-full h-full flex flex-col items-center justify-center text-on-surface-variant p-4 text-center group-hover:bg-primary/5 transition-colors">

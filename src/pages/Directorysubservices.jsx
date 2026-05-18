@@ -14,7 +14,10 @@ import {
   touristFilters, touristPlacesData
 } from "../utils/Directorysubservices";
 
+import { useLoading } from "../context/LoadingContext";
+
 function Directorysubservices() {
+  const { triggerLoading } = useLoading();
   const { id } = useParams();
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,8 +32,8 @@ function Directorysubservices() {
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
-  const handleLocation = (location) => {
-    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+  const handleLocation = (name, location) => {
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + "," + location)}`;
     window.open(url, "_blank");
   };
 
@@ -267,12 +270,16 @@ function Directorysubservices() {
                       </div>
                       <div className="flex gap-2 pt-unit border-t border-outline-variant">
                         <button
-                          onClick={() => handleLocation(item.location)}
+                          onClick={() => handleLocation(item.name, item.location)}
                           className="flex-1 bg-surface-container-low text-primary font-label-md py-2 rounded-lg hover:bg-surface-container transition-colors cursor-pointer"
                         >
                           Location
                         </button>
-                        <Link to={`/details/${id || "hospitals"}/${item.id}`} className="flex-1">
+                        <Link
+                          to={`/details/${id || "hospitals"}/${item.id}`}
+                          className="flex-1"
+                          onClick={triggerLoading}
+                        >
                           <button
                             type="button"
                             className="w-full bg-primary text-on-primary font-label-md py-2 rounded-lg hover:opacity-90 transition-all cursor-pointer"
