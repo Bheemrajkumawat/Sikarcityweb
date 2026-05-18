@@ -1,7 +1,7 @@
 export const navigationData = [
   { id: 1, name: "Home", path: "/" },
   { id: 2, name: "Directory", path: "#" },
-  { id: 3, name: "Help", path: "/servicedetails" },
+  { id: 3, name: "Help", path: "/help" },
 ];
 
 export const directoryCategories = [
