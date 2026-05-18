@@ -226,7 +226,7 @@ function Directorysubservices() {
                           inline: "center",
                         });
                       }}
-                      className={`flex-none px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm ${activeFilter === filter.slug
+                      className={`flex-none px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm cursor-pointer ${activeFilter === filter.slug
                         ? "bg-primary-container text-on-primary-container ring-2 ring-primary/20"
                         : "bg-white border border-outline-variant text-on-surface-variant hover:bg-surface-container"
                         }`}
