@@ -26,6 +26,7 @@ import {
 
 import { useLoading } from "../context/LoadingContext";
 import { SubServiceSkeleton } from "../component/comancomponent/CardSkeleton";
+import NotFound from "./NotFound";
 
 function Directorysubservices() {
   const { triggerLoading } = useLoading();
@@ -142,7 +143,12 @@ function Directorysubservices() {
     },
   };
 
-  const currentCategory = categoryConfig[id] || categoryConfig["hospitals"];
+  const currentCategory = categoryConfig[id];
+  
+  if (!currentCategory) {
+    return <NotFound />;
+  }
+
   const displayData = currentCategory.data;
   const displayTitle = currentCategory.title;
   const currentFilters = currentCategory.filters;
@@ -200,11 +206,10 @@ function Directorysubservices() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setActiveFilter(filter.slug)}
-                      className={`px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm ${
-                        activeFilter === filter.slug
+                      className={`px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm ${activeFilter === filter.slug
                           ? "bg-primary-container text-on-primary-container ring-2 ring-primary/20"
                           : "bg-white border border-outline-variant text-on-surface-variant hover:bg-surface-container"
-                      }`}
+                        }`}
                     >
                       {filter.label}
                     </motion.button>
