@@ -241,7 +241,6 @@ function Directorysubservices() {
               <SubServiceSkeleton />
             ) : (
               <motion.div
-                layout
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -257,7 +256,6 @@ function Directorysubservices() {
                   {filteredItems.map((item, index) => (
                     <motion.div
                       key={item.id}
-                      layout
                       variants={{
                         hidden: { opacity: 0, y: 20 },
                         visible: { opacity: 1, y: 0 },
