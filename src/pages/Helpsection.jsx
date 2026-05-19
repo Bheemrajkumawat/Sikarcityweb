@@ -1,4 +1,3 @@
-import React from "react";
 
 function Helpsection() {
   return (
@@ -16,7 +15,7 @@ function Helpsection() {
           <div class="absolute inset-0 hero-gradient"></div>
           <div class="absolute inset-0 jali-pattern"></div>
           <div class="relative z-10 text-center px-margin-mobile max-w-3xl mx-auto">
-            <h1 class="font-display-lg text-display-lg text-white mb-stack-md">
+            <h1 class="font-display-lg text-display-lg text-[#ffffff] mb-stack-md">
               Contact Us
             </h1>
             <p class="font-body-lg text-body-lg text-primary-fixed-dim">

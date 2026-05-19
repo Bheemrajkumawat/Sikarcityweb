@@ -46,12 +46,9 @@
   --color-on-error: var(--on-error);
   --color-tertiary: var(--tertiary);
   --color-on-tertiary-fixed: var(--on-tertiary-fixed);
-  --color-surface-container-highest: var(--surface-container-highest);
-  --color-surface-container-lowest: var(--surface-container-lowest);
   --color-on-surface: var(--on-surface);
   --color-white: var(--surface-white);
 
-  /* Border Radius */
   --radius-default: 0.25rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;

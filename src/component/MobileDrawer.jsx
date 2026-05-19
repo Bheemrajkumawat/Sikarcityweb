@@ -37,13 +37,13 @@ const MobileDrawer = ({ isOpen, onClose, isMobileDirOpen, setIsMobileDirOpen, is
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 320, damping: 32 }}
-            style={{ position: "fixed", top: 0, right: 0, bottom: 0, zIndex: 9999, width: "80vw", maxWidth: "320px", background: "white", boxShadow: "0 25px 50px rgba(0,35,102,0.18)", display: "flex", flexDirection: "column", overflowY: "auto" }}
+            style={{ position: "fixed", top: 0, right: 0, bottom: 0, zIndex: 9999, width: "80vw", maxWidth: "320px", background: "var(--surface-container-lowest)", boxShadow: "0 25px 50px rgba(0,35,102,0.18)", display: "flex", flexDirection: "column", overflowY: "auto" }}
           >
             {/* Drawer header */}
             <div className="flex items-center justify-between px-3 py-1.5 border-b border-gray-100">
               <Link to="/" onClick={handleLinkClick} className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-[10px]">domain</span>
+                  <span className="material-symbols-outlined text-[#ffffff] text-[10px]">domain</span>
                 </div>
                 <span className="font-bold text-primary text-[15px] tracking-tight">SikarCity</span>
               </Link>

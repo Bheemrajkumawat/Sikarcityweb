@@ -16,7 +16,7 @@ const NotFound = () => {
         const star = document.createElement("div");
 
         star.className =
-          "absolute rounded-full bg-white animate-pulse";
+          "absolute rounded-full bg-[#ffffff] animate-pulse";
 
         const size = Math.random() * 2 + 1;
 
@@ -45,7 +45,7 @@ const NotFound = () => {
         const div = document.createElement("div");
 
         div.className =
-          "absolute border border-white/10 animate-bounce";
+          "absolute border border-[#ffffff]/10 animate-bounce";
 
         div.style.width = `${shape.size}px`;
         div.style.height = `${shape.size}px`;
@@ -151,12 +151,12 @@ const NotFound = () => {
         </div>
 
         {/* 404 */}
-        <h1 className="text-[100px] sm:text-[140px] leading-none font-black text-white drop-shadow-[0_0_40px_rgba(139,92,246,0.6)] animate-pulse">
+        <h1 className="text-[100px] text-[#fff] sm:text-[140px] leading-none font-black  drop-shadow-[0_0_40px_rgba(139,92,246,0.6)] animate-pulse">
           404
         </h1>
 
         {/* Title */}
-        <h2 className="text-2xl md:text-4xl font-bold text-white">
+        <h2 className="text-2xl md:text-4xl font-bold text-[#fff]">
           Oops! Page Not Found
         </h2>
 
@@ -205,14 +205,14 @@ const NotFound = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto px-6 sm:px-0">
           <Link
             to="/"
-            className="px-8 py-3 rounded-full bg-violet-600 hover:bg-violet-500 transition text-white font-medium text-sm md:text-base text-center"
+            className="px-8 py-3 rounded-full bg-violet-600 hover:bg-violet-500 transition text-[#ffffff] font-medium text-sm md:text-base text-center"
           >
             Return to Homepage
           </Link>
 
           <button
             onClick={() => navigate(-1)}
-            className="px-8 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition text-white text-sm md:text-base"
+            className="px-8 py-3 rounded-full border border-white/10 bg-[#fff]/5 hover:bg-[#fff]/10 transition text-[#fff] text-sm md:text-base"
           >
             Go Back
           </button>

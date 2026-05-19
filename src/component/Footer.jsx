@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -46,7 +45,7 @@ function Footer() {
               href="https://facebook.com"
               target="_blank"
               rel="noreferrer"
-              className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+              className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-[#ffffff] transition-all duration-300 shadow-sm"
               aria-label="Facebook"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -59,7 +58,7 @@ function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+              className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-[#ffffff] transition-all duration-300 shadow-sm"
               aria-label="Instagram"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -72,7 +71,7 @@ function Footer() {
               href="https://youtube.com"
               target="_blank"
               rel="noreferrer"
-              className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+              className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-[#ffffff] transition-all duration-300 shadow-sm"
               aria-label="YouTube"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">

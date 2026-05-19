@@ -127,7 +127,7 @@ const Header = () => {
           {/* Theme Toggle */}
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-primary-container/10 hover:bg-primary-container/20 transition-colors"
+            className="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-primary-container/10 hover:bg-primary-container/20 transition-colors cursor-pointer"
             aria-label="Toggle theme"
           >
             <span className="material-symbols-outlined text-[24px]">
