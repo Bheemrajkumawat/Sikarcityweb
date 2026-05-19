@@ -14,11 +14,11 @@ function Herosection() {
           <div className="absolute inset-0 bg-linear-to-r from-primary/80 to-primary-container/40"></div>
         </div>
         <div className="relative z-10 text-center px-margin-mobile max-w-4xl mx-auto">
-          <h1 className="text-white font-display-lg text-display-lg mb-stack-md">
+          <h1 className="text-[#ffffff] font-display-lg text-display-lg mb-stack-md">
             Discover the best places in Sikar City
           </h1>
           <div className="text-center py-10 min-h-30">
-            <h1 className="text-4xl md:text-6xl font-bold text-white font-headline-lg">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#ffffff] font-headline-lg">
               <Typewriter
                 options={{
                   strings: [
@@ -35,7 +35,7 @@ function Herosection() {
               />
             </h1>
           </div>
-          <p className="text-white/90 text-body-lg font-body-lg mb-stack-lg max-w-2xl mx-auto">
+          <p className="text-[#ffffff]/90 text-body-lg font-body-lg mb-stack-lg max-w-2xl mx-auto">
             From ancient heritage havelis to modern healthcare, explore
             everything Sikar has to offer in one comprehensive guide.
           </p>

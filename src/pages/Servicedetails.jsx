@@ -66,7 +66,7 @@ function Servicedetails() {
               loading="lazy"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end p-stack-md">
-              <span className="text-white font-label-md bg-secondary px-3 py-1 rounded-full">
+              <span className="text-[#ffffff] font-label-md bg-secondary px-3 py-1 rounded-full">
                 Main View
               </span>
             </div>
@@ -211,7 +211,7 @@ function Servicedetails() {
               <a href={`tel:${item.phone}`} className="w-full bg-secondary-container text-on-secondary-container py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary transition-colors text-lg">
                 <span className="material-symbols-outlined">call</span> {item.phone}
               </a>
-              <button className="w-full bg-[#25D366] text-white py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity text-lg">
+              <button className="w-full bg-[#25D366] text-[#ffffff] py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity text-lg">
                 <span className="material-symbols-outlined">chat</span> WhatsApp
               </button>
               <div className="pt-4 space-y-4 border-t border-outline-variant">

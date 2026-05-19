@@ -1,56 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-on-background: #1a1c1c;
-  --color-surface-container-high: #e8e8e8;
-  --color-on-tertiary-container: #9b8e76;
-  --color-secondary-fixed-dim: #ffb77d;
-  --color-surface-container: #eeeeee;
-  --color-primary-container: #002366;
-  --color-on-surface-variant: #444650;
-  --color-on-secondary: #ffffff;
-  --color-on-primary-container: #758dd5;
-  --color-inverse-on-surface: #f0f1f1;
-  --color-surface-variant: #e2e2e2;
-  --color-surface: #f9f9f9;
-  --color-surface-container-low: #f3f3f4;
-  --color-secondary-container: #fd8b00;
-  --color-outline-variant: #c5c6d2;
-  --color-on-tertiary-fixed-variant: #4f4631;
-  --color-tertiary-fixed: #f0e1c5;
-  --color-surface-bright: #f9f9f9;
-  --color-secondary-fixed: #ffdcc3;
-  --color-background: #f9f9f9;
-  --color-tertiary-container: #302816;
-  --color-on-secondary-container: #603100;
-  --color-surface-tint: #435b9f;
-  --color-on-primary-fixed: #00174a;
-  --color-inverse-surface: #2f3131;
-  --color-on-primary-fixed-variant: #2a4386;
-  --color-on-secondary-fixed: #2f1500;
-  --color-on-error-container: #93000a;
-  --color-secondary: #904d00;
-  --color-inverse-primary: #b3c5ff;
-  --color-primary-fixed: #dbe1ff;
-  --color-on-tertiary: #ffffff;
-  --color-on-secondary-fixed-variant: #6e3900;
-  --color-tertiary-fixed-dim: #d3c5aa;
-  --color-primary-fixed-dim: #b3c5ff;
-  --color-on-primary: #ffffff;
-  --color-error: #ba1a1a;
-  --color-error-container: #ffdad6;
-  --color-primary: #00113a;
-  --color-surface-dim: #dadada;
-  --color-outline: #757682;
-  --color-on-error: #ffffff;
-  --color-tertiary: #1a1304;
-  --color-on-tertiary-fixed: #221b0a;
-  --color-surface-container-highest: #e2e2e2;
-  --color-surface-container-lowest: #ffffff;
-  --color-on-surface: #1a1c1c;
+  /* Core Color Mapping - Variables defined in :root and .dark */
+  --color-on-background: var(--on-background);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
+  --color-surface-container: var(--surface-container);
+  --color-primary-container: var(--primary-container);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-on-secondary: var(--on-secondary);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-surface-variant: var(--surface-variant);
+  --color-surface: var(--surface);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-secondary-container: var(--secondary-container);
+  --color-outline-variant: var(--outline-variant);
+  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-surface-bright: var(--surface-bright);
+  --color-secondary-fixed: var(--secondary-fixed);
+  --color-background: var(--background);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-surface-tint: var(--surface-tint);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-on-error-container: var(--on-error-container);
+  --color-secondary: var(--secondary);
+  --color-inverse-primary: var(--inverse-primary);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-on-primary: var(--on-primary);
+  --color-error: var(--error);
+  --color-error-container: var(--error-container);
+  --color-primary: var(--primary);
+  --color-surface-dim: var(--surface-dim);
+  --color-outline: var(--outline);
+  --color-on-error: var(--on-error);
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-on-surface: var(--on-surface);
+  --color-white: var(--surface-white);
 
-  /* Border Radius */
   --radius-default: 0.25rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
@@ -107,6 +105,114 @@
   --text-body-lg--font-weight: 400;
 }
 
+:root {
+  /* ==========================================================================
+     LIGHT THEME COLORS (Default)
+     ========================================================================== */
+  --on-background: #1a1c1c;
+  --surface-container-high: #e8e8e8;
+  --on-tertiary-container: #9b8e76;
+  --secondary-fixed-dim: #ffb77d;
+  --surface-container: #eeeeee;
+  --primary-container: #002366;
+  --on-surface-variant: #444650;
+  --on-secondary: #ffffff;
+  --on-primary-container: #758dd5;
+  --inverse-on-surface: #f0f1f1;
+  --surface-variant: #e2e2e2;
+  --surface: #f9f9f9;
+  --surface-container-low: #f3f3f4;
+  --secondary-container: #fd8b00;
+  --outline-variant: #c5c6d2;
+  --on-tertiary-fixed-variant: #4f4631;
+  --tertiary-fixed: #f0e1c5;
+  --surface-bright: #f9f9f9;
+  --secondary-fixed: #ffdcc3;
+  --background: #f9f9f9;
+  --tertiary-container: #302816;
+  --on-secondary-container: #603100;
+  --surface-tint: #435b9f;
+  --on-primary-fixed: #00174a;
+  --inverse-surface: #2f3131;
+  --on-primary-fixed-variant: #2a4386;
+  --on-secondary-fixed: #2f1500;
+  --on-error-container: #93000a;
+  --secondary: #904d00;
+  --inverse-primary: #b3c5ff;
+  --primary-fixed: #dbe1ff;
+  --on-tertiary: #ffffff;
+  --on-secondary-fixed-variant: #6e3900;
+  --tertiary-fixed-dim: #d3c5aa;
+  --primary-fixed-dim: #b3c5ff;
+  --on-primary: #ffffff;
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+  --primary: #00113a;
+  --surface-dim: #dadada;
+  --outline: #757682;
+  --on-error: #ffffff;
+  --tertiary: #1a1304;
+  --on-tertiary-fixed: #221b0a;
+  --surface-container-highest: #e2e2e2;
+  --surface-container-lowest: #ffffff;
+  --on-surface: #1a1c1c;
+  --surface-white: #ffffff;
+}
+
+.dark {
+  /* ==========================================================================
+     DARK THEME COLORS
+     ========================================================================== */
+  --on-background: #ffffff;
+  --surface-container-high: #1a1a1c;
+  --on-tertiary-container: #d1d5db;
+  --secondary-fixed-dim: #f59e0b;
+  --surface-container: #121214;
+  --primary-container: #1e1b4b;
+  --on-surface-variant: #94a3b8;
+  --on-secondary: #ffffff;
+  --on-primary-container: #c7d2fe;
+  --inverse-on-surface: #0a0a0b;
+  --surface-variant: #2d2d30;
+  --surface: #0a0a0b;
+  --surface-container-low: #0f172a;
+  --secondary-container: #fbbf24;
+  --outline-variant: #334155;
+  --on-tertiary-fixed-variant: #9ca3af;
+  --tertiary-fixed: #374151;
+  --surface-bright: #121214;
+  --secondary-fixed: #facc15;
+  --background: #0a0a0b;
+  --tertiary-container: #111827;
+  --on-secondary-container: #1e1b4b;
+  --surface-tint: #4f46e5;
+  --on-primary-fixed: #eef2ff;
+  --inverse-surface: #ffffff;
+  --on-primary-fixed-variant: #818cf8;
+  --on-secondary-fixed: #4338ca;
+  --on-error-container: #fca5a5;
+  --secondary: #f59e0b;
+  --inverse-primary: #4338ca;
+  --primary-fixed: #4f46e5;
+  --on-tertiary: #ffffff;
+  --on-secondary-fixed-variant: #6366f1;
+  --tertiary-fixed-dim: #4b5563;
+  --primary-fixed-dim: #6366f1;
+  --on-primary: #ffffff;
+  --error: #ef4444;
+  --error-container: #450a0a;
+  --primary: #8b5cf6;
+  --surface-dim: #050505;
+  --outline: #475569;
+  --on-error: #ffffff;
+  --tertiary: #1f2937;
+  --on-tertiary-fixed: #f9fafb;
+  --surface-container-highest: #1e1e20;
+  --surface-container-lowest: #050505;
+  --on-surface: #e2e8f0;
+  --surface-white: #121214;
+}
+
 /* Custom Utilities (Replacement for your <style> block) */
 @utility material-symbols-outlined {
   font-variation-settings:
@@ -127,4 +233,12 @@
 
 @utility arch-mask {
   clip-path: ellipse(80% 100% at 50% 100%);
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

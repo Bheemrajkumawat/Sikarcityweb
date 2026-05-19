@@ -97,7 +97,7 @@ function ServiceCategories() {
                   className="group bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(0,35,102,0.08)] hover:-translate-y-1 hover:shadow-[0px_12px_32px_rgba(0,35,102,0.12)] transition-all duration-300 cursor-pointer"
                 >
                   <div
-                    className={`w-12 h-12 rounded-lg flex items-center justify-center mb-stack-md transition-colors ${item.iconBoxClass} group-hover:text-white`}
+                    className={`w-12 h-12 rounded-lg flex items-center justify-center mb-stack-md transition-colors ${item.iconBoxClass} group-hover:text-[#ffffff]`}
                   >
                     <span
                       className="material-symbols-outlined"

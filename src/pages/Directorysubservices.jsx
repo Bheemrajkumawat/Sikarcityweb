@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   hospitalFilters,
@@ -24,21 +24,23 @@ import {
   touristPlacesData,
 } from "../utils/Directorysubservices";
 
-import { useLoading } from "../context/LoadingContext";
+
 import { SubServiceSkeleton } from "../component/comancomponent/CardSkeleton";
+import NotFound from "./NotFound";
 
 function Directorysubservices() {
-  const { triggerLoading } = useLoading();
   const { id } = useParams();
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
 
-  // Debounce search term: update searchQuery only after 500ms of no typing
+  const [isSearching, setIsSearching] = useState(false);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearchQuery(searchTerm);
+      setIsSearching(false);
     }, 500);
 
     return () => clearTimeout(timer);
@@ -142,7 +144,12 @@ function Directorysubservices() {
     },
   };
 
-  const currentCategory = categoryConfig[id] || categoryConfig["hospitals"];
+  const currentCategory = categoryConfig[id];
+
+  if (!currentCategory) {
+    return <NotFound />;
+  }
+
   const displayData = currentCategory.data;
   const displayTitle = currentCategory.title;
   const currentFilters = currentCategory.filters;
@@ -179,16 +186,27 @@ function Directorysubservices() {
                       placeholder={currentCategory.placeholder}
                       type="text"
                       value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
+                      onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                        if (e.target.value !== searchQuery) {
+                          setIsSearching(true);
+                        }
+                      }}
                     />
-                    <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary">
-                      search
-                    </span>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center">
+                      {isSearching ? (
+                        <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                      ) : (
+                        <span className="material-symbols-outlined text-primary">
+                          search
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-stack-sm mb-stack-lg">
+            <div className="flex flex-nowrap overflow-x-auto no-scrollbar gap-stack-sm mb-stack-md pb-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
               <AnimatePresence mode="popLayout">
                 {currentFilters &&
                   currentFilters.map((filter) => (
@@ -199,12 +217,18 @@ function Directorysubservices() {
                       animate={{ opacity: 1, scale: 1 }}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => setActiveFilter(filter.slug)}
-                      className={`px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm ${
-                        activeFilter === filter.slug
-                          ? "bg-primary-container text-on-primary-container ring-2 ring-primary/20"
-                          : "bg-white border border-outline-variant text-on-surface-variant hover:bg-surface-container"
-                      }`}
+                      onClick={(e) => {
+                        setActiveFilter(filter.slug);
+                        e.currentTarget.scrollIntoView({
+                          behavior: "smooth",
+                          block: "nearest",
+                          inline: "center",
+                        });
+                      }}
+                      className={`flex-none px-stack-md py-unit rounded-full font-label-md transition-all duration-300 shadow-sm cursor-pointer ${activeFilter === filter.slug
+                        ? "bg-primary-container text-on-primary-container ring-2 ring-primary/20"
+                        : "bg-white border border-outline-variant text-on-surface-variant hover:bg-surface-container"
+                        }`}
                     >
                       {filter.label}
                     </motion.button>
@@ -216,7 +240,6 @@ function Directorysubservices() {
               <SubServiceSkeleton />
             ) : (
               <motion.div
-                layout
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -232,7 +255,6 @@ function Directorysubservices() {
                   {filteredItems.map((item, index) => (
                     <motion.div
                       key={item.id}
-                      layout
                       variants={{
                         hidden: { opacity: 0, y: 20 },
                         visible: { opacity: 1, y: 0 },
@@ -253,7 +275,7 @@ function Directorysubservices() {
                         />
                         {item.tag && (
                           <span
-                            className={`absolute top-4 right-4 px-3 py-1 rounded-full font-label-md text-xs ${item.tagClass || "bg-secondary-container text-on-secondary-container"}`}
+                            className="absolute top-4 right-4 px-3 py-1 rounded-full font-label-md text-xs bg-primary-container text-on-primary-container"
                           >
                             {item.tag}
                           </span>
